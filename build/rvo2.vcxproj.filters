@@ -7,14 +7,26 @@
     <Filter Include="..">
       <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="..">
-      <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
+    <Filter Include="..\src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
     </Filter>
     <Filter Include="..">
       <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="..\src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="..">
       <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..">
+      <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
     </Filter>
     <Filter Include="c:">
       <UniqueIdentifier>{650CFBF9-B5E5-5FCC-7CA5-8065F8C24E54}</UniqueIdentifier>
@@ -48,20 +60,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\libRVO_wrap.cxx">
+    <ClCompile Include="..\rvo2_wrap.cxx">
       <Filter>..</Filter>
     </ClCompile>
-    <ClCompile Include="..\Agent.cpp">
-      <Filter>..</Filter>
+    <ClCompile Include="..\src\Agent.cpp">
+      <Filter>..\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\KdTree.cpp">
-      <Filter>..</Filter>
+    <ClCompile Include="..\src\KdTree.cpp">
+      <Filter>..\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Obstacle.cpp">
-      <Filter>..</Filter>
+    <ClCompile Include="..\src\Obstacle.cpp">
+      <Filter>..\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\RVOSimulator.cpp">
-      <Filter>..</Filter>
+    <ClCompile Include="..\src\RVOSimulator.cpp">
+      <Filter>..\src</Filter>
     </ClCompile>
     <ClCompile Include="c:\Users\erikv\AppData\Roaming\npm\node_modules\node-gyp\src\win_delay_load_hook.cc">
       <Filter>c:\Users\erikv\AppData\Roaming\npm\node_modules\node-gyp\src</Filter>

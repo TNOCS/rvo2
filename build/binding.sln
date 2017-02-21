@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libRVO", "libRVO.vcxproj", "{98BDC269-FF60-5D4A-3F35-55401F43A792}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rvo2", "rvo2.vcxproj", "{C6A20AC6-7682-B8EC-580C-676C9A8A133F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,10 +8,10 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98BDC269-FF60-5D4A-3F35-55401F43A792}.Debug|x64.ActiveCfg = Debug|x64
-		{98BDC269-FF60-5D4A-3F35-55401F43A792}.Debug|x64.Build.0 = Debug|x64
-		{98BDC269-FF60-5D4A-3F35-55401F43A792}.Release|x64.ActiveCfg = Release|x64
-		{98BDC269-FF60-5D4A-3F35-55401F43A792}.Release|x64.Build.0 = Release|x64
+		{C6A20AC6-7682-B8EC-580C-676C9A8A133F}.Debug|x64.ActiveCfg = Debug|x64
+		{C6A20AC6-7682-B8EC-580C-676C9A8A133F}.Debug|x64.Build.0 = Debug|x64
+		{C6A20AC6-7682-B8EC-580C-676C9A8A133F}.Release|x64.ActiveCfg = Release|x64
+		{C6A20AC6-7682-B8EC-580C-676C9A8A133F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

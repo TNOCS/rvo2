@@ -1515,13 +1515,13 @@ static swig_module_info swig_module = {swig_types, 14, 0, 0, 0, 0};
 #include <stdexcept>
 
 
-#include "RVO.h"
-#include "Vector2.h"
-#include "Definitions.h"
-#include "Agent.h"
-#include "Obstacle.h"
-#include "KdTree.h"
-#include "RVOSimulator.h"
+#include "src/RVO.h"
+#include "src/Vector2.h"
+#include "src/Definitions.h"
+#include "src/Agent.h"
+#include "src/Obstacle.h"
+#include "src/KdTree.h"
+#include "src/RVOSimulator.h"
 
 
 #include <float.h>
@@ -1881,7 +1881,7 @@ SWIGINTERN void std_vector_Sl_RVO_Vector2_Sg__set(std::vector< RVO::Vector2 > *s
                     throw std::out_of_range("vector index out of range");
             }
 
-#define SWIGV8_INIT libRVO_initialize
+#define SWIGV8_INIT rvo2_initialize
 
 
 SWIGV8_ClientData _exports_Vector2_clientData;
@@ -2367,7 +2367,7 @@ fail:
 }
 
 
-static SwigV8ReturnValue _wrap_Vector2_equals(const SwigV8Arguments &args) {
+static SwigV8ReturnValue _wrap_Vector2_isEqual(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
 
   v8::Handle<v8::Value> jsresult;
@@ -2379,19 +2379,19 @@ static SwigV8ReturnValue _wrap_Vector2_equals(const SwigV8Arguments &args) {
   int res2 = 0 ;
   bool result;
 
-  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Vector2_equals.");
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Vector2_isEqual.");
 
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_RVO__Vector2, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vector2_equals" "', argument " "1"" of type '" "RVO::Vector2 const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vector2_isEqual" "', argument " "1"" of type '" "RVO::Vector2 const *""'");
   }
   arg1 = (RVO::Vector2 *)(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_RVO__Vector2,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Vector2_equals" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Vector2_isEqual" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Vector2_equals" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Vector2_isEqual" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
   }
   arg2 = (RVO::Vector2 *)(argp2);
   result = (bool)((RVO::Vector2 const *)arg1)->operator ==((RVO::Vector2 const &)*arg2);
@@ -2436,160 +2436,6 @@ static SwigV8ReturnValue _wrap_Vector2_notEqual(const SwigV8Arguments &args) {
   arg2 = (RVO::Vector2 *)(argp2);
   result = (bool)((RVO::Vector2 const *)arg1)->operator !=((RVO::Vector2 const &)*arg2);
   jsresult = SWIG_From_bool((bool)(result));
-
-
-
-  SWIGV8_RETURN(jsresult);
-
-  goto fail;
-fail:
-  SWIGV8_RETURN(SWIGV8_UNDEFINED());
-}
-
-
-static SwigV8ReturnValue _wrap_Vector2_multiply(const SwigV8Arguments &args) {
-  SWIGV8_HANDLESCOPE();
-
-  v8::Handle<v8::Value> jsresult;
-  RVO::Vector2 *arg1 = (RVO::Vector2 *) 0 ;
-  float arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  float val2 ;
-  int ecode2 = 0 ;
-  RVO::Vector2 *result = 0 ;
-
-  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Vector2_multiply.");
-
-  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vector2_multiply" "', argument " "1"" of type '" "RVO::Vector2 *""'");
-  }
-  arg1 = (RVO::Vector2 *)(argp1);
-  ecode2 = SWIG_AsVal_float(args[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Vector2_multiply" "', argument " "2"" of type '" "float""'");
-  }
-  arg2 = (float)(val2);
-  result = (RVO::Vector2 *) &(arg1)->operator *=(arg2);
-  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-
-
-
-  SWIGV8_RETURN(jsresult);
-
-  goto fail;
-fail:
-  SWIGV8_RETURN(SWIGV8_UNDEFINED());
-}
-
-
-static SwigV8ReturnValue _wrap_Vector2_divide(const SwigV8Arguments &args) {
-  SWIGV8_HANDLESCOPE();
-
-  v8::Handle<v8::Value> jsresult;
-  RVO::Vector2 *arg1 = (RVO::Vector2 *) 0 ;
-  float arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  float val2 ;
-  int ecode2 = 0 ;
-  RVO::Vector2 *result = 0 ;
-
-  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Vector2_divide.");
-
-  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vector2_divide" "', argument " "1"" of type '" "RVO::Vector2 *""'");
-  }
-  arg1 = (RVO::Vector2 *)(argp1);
-  ecode2 = SWIG_AsVal_float(args[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Vector2_divide" "', argument " "2"" of type '" "float""'");
-  }
-  arg2 = (float)(val2);
-  result = (RVO::Vector2 *) &(arg1)->operator /=(arg2);
-  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-
-
-
-  SWIGV8_RETURN(jsresult);
-
-  goto fail;
-fail:
-  SWIGV8_RETURN(SWIGV8_UNDEFINED());
-}
-
-
-static SwigV8ReturnValue _wrap_Vector2_adding(const SwigV8Arguments &args) {
-  SWIGV8_HANDLESCOPE();
-
-  v8::Handle<v8::Value> jsresult;
-  RVO::Vector2 *arg1 = (RVO::Vector2 *) 0 ;
-  RVO::Vector2 *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  RVO::Vector2 *result = 0 ;
-
-  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Vector2_adding.");
-
-  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vector2_adding" "', argument " "1"" of type '" "RVO::Vector2 *""'");
-  }
-  arg1 = (RVO::Vector2 *)(argp1);
-  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_RVO__Vector2,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Vector2_adding" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Vector2_adding" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
-  }
-  arg2 = (RVO::Vector2 *)(argp2);
-  result = (RVO::Vector2 *) &(arg1)->operator +=((RVO::Vector2 const &)*arg2);
-  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-
-
-
-  SWIGV8_RETURN(jsresult);
-
-  goto fail;
-fail:
-  SWIGV8_RETURN(SWIGV8_UNDEFINED());
-}
-
-
-static SwigV8ReturnValue _wrap_Vector2_subtract(const SwigV8Arguments &args) {
-  SWIGV8_HANDLESCOPE();
-
-  v8::Handle<v8::Value> jsresult;
-  RVO::Vector2 *arg1 = (RVO::Vector2 *) 0 ;
-  RVO::Vector2 *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  RVO::Vector2 *result = 0 ;
-
-  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Vector2_subtract.");
-
-  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_RVO__Vector2, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vector2_subtract" "', argument " "1"" of type '" "RVO::Vector2 *""'");
-  }
-  arg1 = (RVO::Vector2 *)(argp1);
-  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_RVO__Vector2,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Vector2_subtract" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Vector2_subtract" "', argument " "2"" of type '" "RVO::Vector2 const &""'");
-  }
-  arg2 = (RVO::Vector2 *)(argp2);
-  result = (RVO::Vector2 *) &(arg1)->operator -=((RVO::Vector2 const &)*arg2);
-  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_RVO__Vector2, 0 |  0 );
 
 
 
@@ -7832,12 +7678,8 @@ SWIGV8_AddMemberFunction(_exports_Vector2_class, "mul", _wrap_Vector2__wrap_Vect
 SWIGV8_AddMemberFunction(_exports_Vector2_class, "div", _wrap_Vector2_div);
 SWIGV8_AddMemberFunction(_exports_Vector2_class, "add", _wrap_Vector2_add);
 SWIGV8_AddMemberFunction(_exports_Vector2_class, "sub", _wrap_Vector2__wrap_Vector2_sub);
-SWIGV8_AddMemberFunction(_exports_Vector2_class, "equals", _wrap_Vector2_equals);
+SWIGV8_AddMemberFunction(_exports_Vector2_class, "isEqual", _wrap_Vector2_isEqual);
 SWIGV8_AddMemberFunction(_exports_Vector2_class, "notEqual", _wrap_Vector2_notEqual);
-SWIGV8_AddMemberFunction(_exports_Vector2_class, "multiply", _wrap_Vector2_multiply);
-SWIGV8_AddMemberFunction(_exports_Vector2_class, "divide", _wrap_Vector2_divide);
-SWIGV8_AddMemberFunction(_exports_Vector2_class, "adding", _wrap_Vector2_adding);
-SWIGV8_AddMemberFunction(_exports_Vector2_class, "subtract", _wrap_Vector2_subtract);
 SWIGV8_AddStaticVariable(exports_obj, "RVO_EPSILON", _wrap_RVO_EPSILON_get, JS_veto_set_variable);
 SWIGV8_AddStaticVariable(exports_obj, "RVO_ERROR", _wrap_RVO_ERROR_get, JS_veto_set_variable);
 SWIGV8_AddMemberVariable(_exports_Line_class, "point", _wrap_Line_point_get, _wrap_Line_point_set);
@@ -8011,5 +7853,5 @@ exports_obj->Set(SWIGV8_SYMBOL_NEW("vectorvector"), _exports_vectorvector_obj);
 }
 
 #if defined(BUILDING_NODE_EXTENSION)
-NODE_MODULE(libRVO, libRVO_initialize)
+NODE_MODULE(rvo2, rvo2_initialize)
 #endif

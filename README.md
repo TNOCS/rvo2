@@ -25,7 +25,7 @@ United States of America
 ## Installation
 
 ```console
-npm i orca
+npm install rvo2 --save
 ```
 
 ## Usage
@@ -56,9 +56,9 @@ Optionally, copy folder `c:\Users\USERNAME\.node-gyp\6.9.5\x64` to `c:\Users\USE
 ### Compiling the library
 
 ```console
-swig -javascript -node -c++ libRVO.i
+swig -javascript -node -c++ rvo2.i
 ```
-Open the generated `libRVO_wrap.cxx` in your favorite editor and replace `std::vector< Line >` with `std::vector< RVO::Line >`.
+Open the generated `rvo2_wrap.cxx` in your favorite editor and replace `std::vector< Line >` with `std::vector< RVO::Line >`.
 
 Finally, compile the library with:
 ```console
@@ -67,10 +67,10 @@ node-gyp rebuild
 
 ### Some remarks about the process
 
-The first time I've tried the above, it didn't work, and I had to manually make several changes to the VS2015 solution to get it working. See below. When it finally worked, I started looking for options to create a better SWIG file (`libRVO.i`), and a better `binding.gyp` file.
+The first time I've tried the above, it didn't work, and I had to manually make several changes to the VS2015 solution to get it working. See below. When it finally worked, I started looking for options to create a better SWIG file (`rvo2.i`), and a better `binding.gyp` file.
 
 When building the solution with `node-gyp`, I received the following error:
-`LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library [C:\dev\web\test_rvo2\build\libRVO.vcxproj]`.
+`LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library [C:\dev\web\test_rvo2\build\rvo2.vcxproj]`.
 Unfortunatelty, `binding.gyp` is poorly documented, but after some trial-and-error, I added `'ldflags': [ '/NODEFAULTLIB:libcmt.lib ' ]` to the file. In addition, I've added all the source `*.cpp` files too to the `sources` property.
 
 About the SWIG file, there was also a lot of trial-and-error involved: specifically, I needed to include the `std_vector.i` file since the C++ code uses `std::vector`, and I needed to create a mapping from `vector<RVO::Vector2>` to a new name, in this case `vectorvector`.
@@ -91,14 +91,14 @@ namespace std {
 ### Manual edits to VS2015 solution
 
 Open `build\binding.sln` solution in VS2015
-replace in libRVO
+replace in rvo2
   Line --> RVO::Line
 Switch to RELEASE mode
 
-Open libRVO project properties
+Open rvo2 project properties
 Linker | Input | Additional dependencies and add:
   msvcrt.lib; msvcmrt.lib
 Linker | Input | Ignore specific default libraries and add
   libcmt.lib
 
-Add the original `*.cpp` to the libRVO project (drag-n-drop).
+Add the original `*.cpp` to the rvo2 project (drag-n-drop).
