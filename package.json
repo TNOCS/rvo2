@@ -2,8 +2,8 @@
   "name": "rvo2",
   "version": "1.1.0",
   "description": "RVO2 is a node.js wrapper around the pedestrian simulator RVO2 library, an implementation of the ORCA algorithm.",
-  "main": "./rvo2/rvo2.js",
-  "types": "./rvo2/rvo2.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "directories": {
     "example": "examples"
   },

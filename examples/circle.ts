@@ -1,4 +1,4 @@
-import { Vector2, vectorvector, RVOSimulator, abs, absSq, normalize } from '../rvo2/rvo2';
+import { Vector2, vectorvector, RVOSimulator, abs, absSq, normalize } from '../lib/index';
 
 const v1 = new Vector2(-1, 2);
 const v2 = new Vector2(1, 2);

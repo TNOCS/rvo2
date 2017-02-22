@@ -1,6 +1,6 @@
 // Type definitions for rvo2
-// Project: rvo2
-// Definitions by: Erik Vullings <erik.vullings@gmail.com>
+// Project: https://github.com/TNOCS/rvo2
+// Definitions by: Erik Vullings <https://github.com/erikvullings>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare namespace rvo2 {
