@@ -3,7 +3,7 @@
     {
       'target_name': 'rvo2',
       'defines': [ 'V8_DEPRECATION_WARNINGS=1' ],
-      'cflags': [ '-Wall -O3' ],
+      'cflags': [ '-Wall -O3 -openmp' ],
       'ldflags': [ '-NODEFAULTLIB:libcmt.lib' ],
       'sources': [ 'rvo2_wrap.cxx', 'src/Agent.cpp', 'src/KdTree.cpp', 'src/Obstacle.cpp', 'src/RVOSimulator.cpp' ],
       'configurations': {
@@ -11,6 +11,9 @@
           'msvs_settings': {
             'VCCLCompilerTool': {
               'ExceptionHandling': 1,
+              'AdditionalOptions': [
+                '/openmp', # compile across multiple CPUs
+              ],
             }
           }
         }

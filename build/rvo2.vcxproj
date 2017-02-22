@@ -88,7 +88,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\erikv\.node-gyp\6.9.5\include\node;C:\Users\erikv\.node-gyp\6.9.5\src;C:\Users\erikv\.node-gyp\6.9.5\deps\uv\include;C:\Users\erikv\.node-gyp\6.9.5\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MP /openmp %(AdditionalOptions)</AdditionalOptions>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <CompileAsWinRT>false</CompileAsWinRT>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -145,7 +145,7 @@
     <ClCompile Include="..\src\KdTree.cpp"/>
     <ClCompile Include="..\src\Obstacle.cpp"/>
     <ClCompile Include="..\src\RVOSimulator.cpp"/>
-    <ClCompile Include="c:\Users\erikv\AppData\Roaming\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
+    <ClCompile Include="C:\Users\erikv\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
