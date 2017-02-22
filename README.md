@@ -38,7 +38,7 @@ In case you want to compile the application yourself, here are some instructions
 
 ### Prerequisites
 
-Install [node](nodejs.org).
+Install [node](http://nodejs.org).
 
 Run as non-admin (installs node-gyp in your own environment)
 ```console
