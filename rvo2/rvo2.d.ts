@@ -1,44 +1,49 @@
+// Type definitions for rvo2
+// Project: rvo2
+// Definitions by: Erik Vullings <erik.vullings@gmail.com>
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+
 declare namespace rvo2 {
 
-  class Line {
+	class Line {
 		/**
 		 * A point on the directed line.
 		 */
-    point: Vector2;
+		point: Vector2;
 
 		/**
 		 * The direction of the directed line.
 		 */
 		direction: Vector2;
-  }
+	}
 
   /**
    * The Agent class has no public members or methods.
    *
    * @class Agent
    */
-  class Agent {}
+	class Agent { }
 
   /**
    * The KdTree class has no public members or methods.
    *
    * @class KdTree
    */
-  class KdTree {}
+	class KdTree { }
 
   /**
    * The Obstacle class has no public members or methods.
    *
    * @class Obstacle
    */
-  class Obstacle {}
+	class Obstacle { }
 
   /**
    * A simple two dimensional vector with an x and y position.
    *
    * @class Vector2
    */
-  class Vector2 {
+	class Vector2 {
     /**
      * Creates an instance of Vector2.
      *
@@ -47,7 +52,7 @@ declare namespace rvo2 {
      *
      * @memberOf Vector2
      */
-   constructor(x: number, y: number);
+		constructor(x: number, y: number);
 
     /**
      * Returns the x position.
@@ -56,7 +61,7 @@ declare namespace rvo2 {
      *
      * @memberOf Vector2
      */
-    x(): number;
+		x(): number;
     /**
      * Returns the y position.
      *
@@ -64,7 +69,7 @@ declare namespace rvo2 {
      *
      * @memberOf Vector2
      */
-    y(): number;
+		y(): number;
     /**
      * Add two vectors.
      *
@@ -73,7 +78,7 @@ declare namespace rvo2 {
      *
      * @memberOf Vector2
      */
-    add(v: Vector2): Vector2;
+		add(v: Vector2): Vector2;
     /**
      * Subtract two vectors.
      *
@@ -82,7 +87,7 @@ declare namespace rvo2 {
      *
      * @memberOf Vector2
      */
-    sub(v: Vector2): Vector2;
+		sub(v: Vector2): Vector2;
     /**
      * Multiplies the vector by a scalar.
      *
@@ -91,25 +96,27 @@ declare namespace rvo2 {
      *
      * @memberOf Vector2
      */
-    mul(s: number): Vector2;
-  }
+		mul(s: number): Vector2;
+	}
 
   /**
    * An array of Vector2 vectors.
    *
    * @class vectorvector
    */
-  class vectorvector {
-    constructor(size?: number);
-  }
+	class vectorvector {
+		constructor(size?: number);
+
+		[index: number]: Vector2;
+	}
 
   /**
    * Simulation engine.
    *
    * @class sim
    */
-  class RVOSimulator {
-    constructor();
+	class RVOSimulator {
+		constructor();
 
 		/**
 		 * Constructs a simulator instance and sets the default
@@ -154,8 +161,8 @@ declare namespace rvo2 {
 		 *                             velocity of a new agent (optional).
 		 */
 		constructor(timeStep: number, neighborDist: number, maxNeighbors: number,
-					 timeHorizon: number, timeHorizonObst: number, radius: number,
-					 maxSpeed: number, velocity?: Vector2);
+			timeHorizon: number, timeHorizonObst: number, radius: number,
+			maxSpeed: number, velocity?: Vector2);
 
     /**
      * Sets the time step of the simulation.
@@ -165,7 +172,7 @@ declare namespace rvo2 {
      *
      * @memberOf sim
      */
-    setTimeStep(timeStep: number);
+		setTimeStep(timeStep: number): void;
 
     /**
      * Lets the simulator perform a simulation step and updates the
@@ -173,7 +180,7 @@ declare namespace rvo2 {
      *
      * @memberOf RVOSimulator
      */
-    doStep();
+		doStep(): void;
 
 		/**
 		 * Sets the default properties for any new agent that is added.
@@ -213,7 +220,7 @@ declare namespace rvo2 {
 		 * @param {Vector2} velocity   The default initial two-dimensional linear
 		 *                             velocity of a new agent (optional).
 		 */
-    setAgentDefaults(neighborDist: number, maxNeighbors: number, timeHorizon: number, timeHorizonObst: number, radius: number, maxSpeed: number, velocity?: Vector2): void;
+		setAgentDefaults(neighborDist: number, maxNeighbors: number, timeHorizon: number, timeHorizonObst: number, radius: number, maxSpeed: number, velocity?: Vector2): void;
     /**
      * Adds a new agent with default properties to the simulation.
      *
@@ -223,7 +230,7 @@ declare namespace rvo2 {
      *
      * @membeim
      */
-    addAgent(position: Vector2): number;
+		addAgent(position: Vector2): number;
 
 		/**
 		 * Adds a new agent to the simulation.
@@ -268,8 +275,8 @@ declare namespace rvo2 {
 		 * @returns {number} The number of the agent.
 		 */
 		addAgent(position: Vector2, neighborDist: number, maxNeighbors: number,
-              timeHorizon: number, timeHorizonObst: number, radius: number,
-              maxSpeed: number, velocity: Vector2): number;
+			timeHorizon: number, timeHorizonObst: number, radius: number,
+			maxSpeed: number, velocity: Vector2): number;
 
 		/**
 		 * Adds a new obstacle to the simulation.
@@ -292,7 +299,7 @@ declare namespace rvo2 {
      *
      * @memberOf sim
      */
-    getAgentPosition(index: number): Vector2;
+		getAgentPosition(index: number): Vector2;
 
 		/**
 		 * Sets the two-dimensional preferred velocity of a specified agent.
@@ -301,7 +308,7 @@ declare namespace rvo2 {
 		 * @param {Vector2} prefVelocity    The replacement of the two-dimensional
 		 *                             preferred velocity.
 		 */
-    setAgentPrefVelocity(agentNo: number, prefVelocity: Vector2);
+		setAgentPrefVelocity(agentNo: number, prefVelocity: Vector2): void;
 
 		/**
 		 * Returns the specified agent neighbor of the specified agent.
@@ -348,7 +355,7 @@ declare namespace rvo2 {
 		 * @return {number} The count of agent neighbors taken into account to compute
 		 *             the current velocity for the specified agent.
 		 */
-    getAgentNumAgentNeighbors(agentNo: number): number;
+		getAgentNumAgentNeighbors(agentNo: number): number;
 
 		/**
 		 * Returns the count of obstacle neighbors taken into account
@@ -533,7 +540,7 @@ declare namespace rvo2 {
 		 * visible. Returns true when the obstacles have not been processed.
 		 */
 		queryVisibility(point1: Vector2, point2: Vector2, radius?: number): number;
-  }
+	}
 
   /**
    * Computes the length of a specified two-dimensional vector.
@@ -543,14 +550,14 @@ declare namespace rvo2 {
    *
    * @memberOf sim
    */
-  function abs(v: Vector2): number;
+	function abs(v: Vector2): number;
 
 	/**
 	 * Computes the squared length of a specified two-dimensional vector.
 	 * @param {Vector2} v The two-dimensional vector whose squared length is to be computed.
 	 * @returns {number}  The squared length of the two-dimensional vector.
 	 */
-  function absSq(v: Vector2): number;
+	function absSq(v: Vector2): number;
 
 	/**
 	 * Computes the determinant of a two-dimensional square matrix with
@@ -559,14 +566,14 @@ declare namespace rvo2 {
 	 * @param {Vector2} v2 The bottom row of the two-dimensional square matrix.
 	 * @returns {number} The determinant of the two-dimensional square matrix.
 	 */
-  function det(v1: Vector2, v2: Vector2): number;
+	function det(v1: Vector2, v2: Vector2): number;
 
-  	/**
-	 * Computes the normalization of the specified two-dimensional vector.
-	 * @param {Vector2} vector  The two-dimensional vector whose normalization
-	 *                          is to be computed.
-	 * returns {Vector2}   The normalization of the two-dimensional vector.
-	 */
+	/**
+ * Computes the normalization of the specified two-dimensional vector.
+ * @param {Vector2} vector  The two-dimensional vector whose normalization
+ *                          is to be computed.
+ * returns {Vector2}   The normalization of the two-dimensional vector.
+ */
 	function normalize(vector: Vector2): Vector2
 
 }

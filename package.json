@@ -2,13 +2,13 @@
   "name": "rvo2",
   "version": "1.1.0",
   "description": "RVO2 is a node.js wrapper around the pedestrian simulator RVO2 library, an implementation of the ORCA algorithm.",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./rvo2/rvo2.js",
+  "types": "./rvo2/rvo2.d.ts",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsc --noImplicitAny --module commonjs ./rvo2/rvo2-test.ts",
     "install": "node-gyp rebuild"
   },
   "repository": {
@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/TNOCS/rvo2/issues"
   },
-  "homepage": "https://github.com/TNOCS/rvo2#readme"
+  "homepage": "https://github.com/TNOCS/rvo2#readme",
+  "devDependencies": {
+    "typescript": "^2.1.6"
+  }
 }

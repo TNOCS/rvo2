@@ -1,4 +1,4 @@
-import { Vector2, vectorvector, RVOSimulator, abs, absSq, normalize } from '../lib/index';
+import { Vector2, vectorvector, RVOSimulator, abs, absSq, normalize } from '../rvo2/rvo2';
 
 const v1 = new Vector2(-1, 2);
 const v2 = new Vector2(1, 2);
@@ -8,7 +8,7 @@ const vv = new vectorvector(2);
 vv[0] = v1;
 vv[1] = v2;
 
-function setupScenario(sim: RVOSimulator, goals, nbrAgents: number) {
+function setupScenario(sim: RVOSimulator, goals: vectorvector, nbrAgents: number) {
   sim.setTimeStep(0.25);
   sim.setAgentDefaults(15.0, 10, 10.0, 10.0, 1.5, 2.0);
 
@@ -26,7 +26,7 @@ function setupScenario(sim: RVOSimulator, goals, nbrAgents: number) {
   // const a2 = sim.addAgent(v2, 2, 4, 5, 5, 2, 6, v1);
 }
 
-function setPreferredVelocity(sim, goals) {
+function setPreferredVelocity(sim: RVOSimulator, goals: vectorvector) {
   for (var i = 0; i < sim.getNumAgents(); i++) {
     const goal = goals[i];
     const pos = sim.getAgentPosition(i);
@@ -40,7 +40,7 @@ function setPreferredVelocity(sim, goals) {
   }
 }
 
-function reachedGoal(sim, goals) {
+function reachedGoal(sim: RVOSimulator, goals: vectorvector) {
   /* Check if all agents have reached their goals. */
   for (var i = 0; i < sim.getNumAgents(); ++i) {
     const goal = goals[i];
