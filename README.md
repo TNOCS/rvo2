@@ -62,7 +62,7 @@ Open the generated `rvo2_wrap.cxx` in your favorite editor and replace `std::vec
 
 Finally, compile the library with:
 ```console
-node-gyp rebuild
+node-gyp rebuild --verbose
 ```
 
 ### Some remarks about the process
