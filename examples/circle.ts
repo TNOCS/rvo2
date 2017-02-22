@@ -1,16 +1,5 @@
 import { Vector2, vectorvector, RVOSimulator, abs, absSq, normalize } from '../lib/index';
 
-// Juryleden letten op:
-// - Emoties
-// - Kijken in de zaal/meenemen met het verhaal
-// - Tempo
-// - Nadruk (stemgebruik, klemtoon, harder/zachter)
-// - Verstaanbaarheid (uitspraak moet goed zijn)
-// - Fragmentkeuze (leuk stukje uit het boek)
-//
-// Random selectie van leesvolgorde.
-// Voorstellen van jezelf, en vertel iets over het boekje dat je gekozen hebt.
-
 const v1 = new Vector2(-1, 2);
 const v2 = new Vector2(1, 2);
 const length = abs(v1);
