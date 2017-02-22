@@ -78,7 +78,7 @@ function updateVisualization(sim)
 	const time = sim.getGlobalTime();
 
 	/* Output the current position of all the agents. */
-	for (i = 0; i < sim.getNumAgents(); ++i) {
+	for (var i = 0; i < sim.getNumAgents(); ++i) {
     const p = sim.getAgentPosition(i);
     console.log(i + ': ' + 'x = ' + p.x() + ', y = ' + p.y());
   }
